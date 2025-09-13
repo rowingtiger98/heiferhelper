@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cow Counter</h1>
-    {% include 'partials/count.html' %}
+    {% include 'partials/count-partial.html' %}
     <button hx-target="#count" hx-post="/add-cow">Add Cow</button>
     <button hx-target="#count" hx-post="/reset-cow-count">Reset Cow Count</button>
         <script src="{{ url_for('static', path='/js/libraries/htmx.min.js') }}"></script>

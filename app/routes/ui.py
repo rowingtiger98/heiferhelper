@@ -27,7 +27,7 @@ async def add_cow(request: Request):
         write_file.write(f"{int(file_content) + 1}")
     with open("count.txt", "r") as updated_file:
         updated_file_content = updated_file.read()
-    return templates.TemplateResponse(request=request, name="partials/count.html", context={"count": updated_file_content})
+    return templates.TemplateResponse(request=request, name="partials/count-partial.html", context={"count": updated_file_content})
 
 
 
@@ -37,6 +37,6 @@ async def reset_cows(request: Request):
         file.write("0")
     with open("count.txt", "r") as updated_file:
         updated_file_content = updated_file.read()
-    return templates.TemplateResponse(request=request, name="partials/count.html", context={"count": updated_file_content})
+    return templates.TemplateResponse(request=request, name="partials/count-partial.html", context={"count": updated_file_content})
 
     
